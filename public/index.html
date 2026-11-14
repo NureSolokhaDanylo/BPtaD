@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Допомога ЗСУ — Оперативний збір</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <main class="card">
+    <div class="header-badge">
+      <svg class="emblem" viewBox="0 0 64 64" aria-hidden="true">
+        <path d="M24 6h16l-3 18 19-3v16l-19-3 3 18H24l3-18-19 3V21l19 3-3-18z" fill="#c89d54" stroke="#ffd700" stroke-width="2"/>
+        <circle cx="32" cy="32" r="9" fill="#3b4d28" stroke="#ffd700" stroke-width="2"/>
+        <path d="M32 25v14M28 28v7c0 2 2 3 4 3s4-1 4-3v-7" stroke="#ffd700" stroke-width="2" fill="none" stroke-linecap="round"/>
+      </svg>
+      <span>ОПЕРАТИВНИЙ ЗБІР ДЛЯ ЗСУ</span>
+    </div>
+
+    <h1>Підтримати захисників України</h1>
+    <p class="lead">Збираємо кошти на ударні FPV-дрони, засоби РЕБ та тактичну медицину для підрозділів на передовій. Кожна гривня та долар наближають перемогу!</p>
+
+    <div class="needs-tags">
+      <span class="tag">🛸 FPV-дрони</span>
+      <span class="tag">🛡️ Системи РЕБ</span>
+      <span class="tag">🔭 Тепловізори</span>
+      <span class="tag">🩺 Такмед</span>
+    </div>
+
+    <div class="presets">
+      <button class="preset" data-amount="5">$5</button>
+      <button class="preset active" data-amount="10">$10</button>
+      <button class="preset" data-amount="25">$25</button>
+      <button class="preset" data-amount="50">$50</button>
+    </div>
+
+    <label for="amount">Сума донату (<span id="currency">USD</span>)</label>
+    <input id="amount" type="number" step="0.01" value="10" />
+
+    <div id="paypal-buttons"></div>
+    <div id="message" class="message" role="status"></div>
+
+    <div class="footer-meta">
+      <span class="flag-strip"></span>
+      <p class="note">Слава Україні! Героям Слава! • Тестовий режим PayPal Sandbox (гроші не списуються).</p>
+    </div>
+  </main>
+  <script type="module" src="/js/main.js" nonce="__CSP_NONCE__"></script>
+</body>
+</html>

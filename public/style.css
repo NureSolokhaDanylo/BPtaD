@@ -1,0 +1,203 @@
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 1.5rem 1rem;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  color: #f0f4e8;
+  background-color: #1f271b;
+  background-image:
+    radial-gradient(circle at 15% 20%, rgba(0, 87, 183, 0.22) 0%, transparent 45%),
+    radial-gradient(circle at 85% 80%, rgba(255, 215, 0, 0.16) 0%, transparent 45%),
+    repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.02) 0px, rgba(255, 255, 255, 0.02) 1px, transparent 1px, transparent 24px),
+    repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.02) 0px, rgba(255, 255, 255, 0.02) 1px, transparent 1px, transparent 24px),
+    linear-gradient(145deg, #1b2217 0%, #283321 50%, #161c12 100%);
+}
+
+.card {
+  background: #232b1e;
+  border: 1px solid #3c4a33;
+  padding: 2rem;
+  border-radius: 18px;
+  width: min(460px, 94vw);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.07);
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, #0057b7 0%, #0057b7 50%, #ffd700 50%, #ffd700 100%);
+}
+
+.header-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  background: rgba(200, 157, 84, 0.14);
+  border: 1px solid rgba(255, 215, 0, 0.35);
+  color: #ffd700;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  margin-bottom: 0.9rem;
+}
+
+.emblem {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+}
+
+h1 {
+  margin: 0 0 0.5rem;
+  font-size: 1.55rem;
+  line-height: 1.2;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+}
+
+.lead {
+  color: #b7c4aa;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  margin: 0 0 1rem;
+}
+
+.needs-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 1.15rem;
+}
+
+.tag {
+  background: #2d3827;
+  border: 1px solid #43523a;
+  color: #d7e2cc;
+  font-size: 0.78rem;
+  font-weight: 500;
+  padding: 0.28rem 0.65rem;
+  border-radius: 8px;
+}
+
+.presets {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.55rem;
+  margin-bottom: 1rem;
+}
+
+.preset {
+  padding: 0.7rem;
+  border: 1.5px solid #4a5c3e;
+  background: #2b3525;
+  color: #e6eedf;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.preset:hover {
+  border-color: #ffd700;
+  background: #35422d;
+  color: #ffd700;
+}
+
+.preset.active {
+  background: #ffd700;
+  border-color: #ffd700;
+  color: #1a2016;
+  box-shadow: 0 4px 14px rgba(255, 215, 0, 0.25);
+}
+
+label {
+  display: block;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #c8d4bc;
+  margin-bottom: 0.35rem;
+}
+
+input {
+  width: 100%;
+  padding: 0.75rem 0.9rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #ffffff;
+  background: #181e14;
+  border: 1.5px solid #3f4e36;
+  border-radius: 10px;
+  margin-bottom: 1.2rem;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+input:focus {
+  border-color: #ffd700;
+  box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.18);
+}
+
+.message {
+  margin-top: 1rem;
+  padding: 0.75rem 0.9rem;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  display: none;
+}
+
+.message.ok {
+  display: block;
+  background: rgba(46, 160, 67, 0.18);
+  border: 1px solid #3fb950;
+  color: #7ee787;
+}
+
+.message.error {
+  display: block;
+  background: rgba(248, 81, 73, 0.18);
+  border: 1px solid #f85149;
+  color: #ffa198;
+}
+
+.message.info {
+  display: block;
+  background: rgba(0, 87, 183, 0.25);
+  border: 1px solid #388bfd;
+  color: #a5d6ff;
+}
+
+.footer-meta {
+  margin-top: 1.25rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid #333f2b;
+  text-align: center;
+}
+
+.flag-strip {
+  display: inline-block;
+  width: 36px;
+  height: 6px;
+  border-radius: 3px;
+  background: linear-gradient(90deg, #0057b7 50%, #ffd700 50%);
+  margin-bottom: 0.35rem;
+}
+
+.note {
+  font-size: 0.78rem;
+  color: #8c9c7e;
+  margin: 0;
+}
